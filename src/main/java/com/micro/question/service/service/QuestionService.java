@@ -1,8 +1,8 @@
-package com.micro.question_service.service;
-
-import com.micro.question_service.dto.QuestionResponse;
+package com.micro.question.service.service;
 
 import java.util.List;
+
+import com.micro.question.service.dto.QuestionResponse;
 
 public interface QuestionService {
 

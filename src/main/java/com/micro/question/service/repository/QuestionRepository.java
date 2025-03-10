@@ -1,8 +1,9 @@
-package com.micro.question_service.repository;
+package com.micro.question.service.repository;
 
-import com.micro.question_service.entity.QuestionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.micro.question.service.entity.QuestionEntity;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<QuestionEntity, Integer> {

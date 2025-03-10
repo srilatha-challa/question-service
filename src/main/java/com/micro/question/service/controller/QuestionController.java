@@ -1,7 +1,9 @@
-package com.micro.question_service.controller;
+package com.micro.question.service.controller;
 
-import com.micro.question_service.dto.QuestionResponse;
-import com.micro.question_service.service.QuestionService;
+import com.micro.question.service.dto.QuestionResponse;
+import com.micro.question.service.service.QuestionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("question")
+@Tag(name = "Question Controller", description = "Question Operations API")
 public class QuestionController {
 
     private final QuestionService questionService;

@@ -1,19 +1,16 @@
-package com.micro.question_service.entity;
+package com.micro.question.service.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "question")
-public class QuestionEntity {
+public class QuestionResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String questionTitle;
     private String option1;
@@ -23,7 +20,4 @@ public class QuestionEntity {
     private String rightAnswer;
     private String difficultyLevel;
     private String category;
-
-
-
 }

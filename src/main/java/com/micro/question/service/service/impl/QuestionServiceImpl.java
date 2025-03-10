@@ -1,8 +1,9 @@
-package com.micro.question_service.service.impl;
+package com.micro.question.service.service.impl;
 
-import com.micro.question_service.dto.QuestionResponse;
-import com.micro.question_service.repository.QuestionRepository;
-import com.micro.question_service.service.QuestionService;
+import com.micro.question.service.dto.QuestionResponse;
+import com.micro.question.service.repository.QuestionRepository;
+import com.micro.question.service.service.QuestionService;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

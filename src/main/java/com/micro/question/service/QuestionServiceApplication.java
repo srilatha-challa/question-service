@@ -1,4 +1,4 @@
-package com.micro.question_service;
+package com.micro.question.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
