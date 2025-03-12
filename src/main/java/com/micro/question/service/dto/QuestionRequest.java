@@ -1,22 +1,18 @@
-package com.micro.question.service.entity;
+package com.micro.question.service.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "question")
-public class QuestionEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class QuestionRequest {
+	
+	@NotBlank(message = "QuestionTitle is required")
     private String questionTitle;
     private String option1;
     private String option2;
@@ -25,7 +21,5 @@ public class QuestionEntity {
     private String rightAnswer;
     private String difficultyLevel;
     private String category;
-
-
 
 }
