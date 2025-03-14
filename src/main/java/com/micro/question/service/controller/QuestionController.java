@@ -55,7 +55,7 @@ public class QuestionController {
     
     @DeleteMapping("delete/questions")
     @Operation(summary = "Delete Questions")
-    public ResponseEntity<String> deleteQuestions(@NotEmpty(message = "Id list should not empty") @RequestBody List<Integer> idList){
+    public ResponseEntity<String> deleteQuestions(@NotEmpty(message = "Id list {should.not.empty}")@RequestBody List<Integer> idList){
     	return new ResponseEntity<String>(questionService.deleteQuestions(idList), HttpStatus.OK);   	
     }
 }

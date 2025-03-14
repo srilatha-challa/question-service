@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
-@PropertySource("classpath:/errormessages.properties")
 public class QuestionServiceImpl implements QuestionService {
 
     private final QuestionRepository questionRepository;
