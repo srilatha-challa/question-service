@@ -7,6 +7,7 @@ import com.micro.question.service.repository.QuestionRepository;
 import com.micro.question.service.service.QuestionService;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@PropertySource("classpath:/errormessages.properties")
 public class QuestionServiceImpl implements QuestionService {
 
     private final QuestionRepository questionRepository;
