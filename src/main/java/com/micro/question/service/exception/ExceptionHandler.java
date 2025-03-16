@@ -6,20 +6,32 @@ import java.util.regex.Pattern;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.micro.question.service.dto.ErrorReponse;
 import jakarta.validation.ConstraintViolationException;
 
-
 @RestControllerAdvice
 public class ExceptionHandler {
-	
-	
+		
 	@org.springframework.web.bind.annotation.ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<ErrorReponse> constraintViolationException(ConstraintViolationException exception){
-		return new ResponseEntity<ErrorReponse>(new ErrorReponse(null, HttpStatus.BAD_REQUEST.value(), List.of(extractQueryErrorName(exception.getMessage()))), HttpStatus.BAD_REQUEST);		
+		return new ResponseEntity<>(new ErrorReponse(null, HttpStatus.BAD_REQUEST.value(), 
+				List.of(extractQueryErrorName(exception.getMessage()))), HttpStatus.BAD_REQUEST);		
 	}
 	
+	@org.springframework.web.bind.annotation.ExceptionHandler(NotFoundException.class)
+	public ResponseEntity<ErrorReponse> notFoundException(NotFoundException exception){
+		return new ResponseEntity<>(new ErrorReponse(exception.getMessage(), HttpStatus.NOT_FOUND.value(), 
+				List.of()), HttpStatus.NOT_FOUND);		
+	}
+	
+	@org.springframework.web.bind.annotation.ExceptionHandler(BadRequestException.class)
+	public ResponseEntity<ErrorReponse> badRequestException(BadRequestException exception){
+		return new ResponseEntity<>(new ErrorReponse(exception.getMessage(), HttpStatus.BAD_REQUEST.value(), 
+				List.of()), HttpStatus.BAD_REQUEST);		
+	}
+		
 	private String extractQueryErrorName(String errorMessage) {
         try {
 			/* Define a regex pattern to match field names  to remove unwanted message 

@@ -19,4 +19,7 @@ public interface QuestionRepository extends JpaRepository<QuestionEntity, Intege
 			+ " from QuestionEntity q "
 			+ " where q.category = :category")
 	List<QuestionResponse> findByCategory(@Param("category") String category);
+	
+	@Query("SELECT q.id FROM QuestionEntity q WHERE q.category = :category ORDER BY Rand() LIMIT :numOfQuestions")
+	List<Integer> findIdByCategory(@Param("category") String category, @Param("numOfQuestions") Integer numOfQuestions);
 }
