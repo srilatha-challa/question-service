@@ -74,6 +74,7 @@ public class QuestionController {
     	return new ResponseEntity<>(questionService.getQuestionsFromId(idList), HttpStatus.OK);   	    	   	
     }
     
+    
     @PostMapping("getScore")
     @Operation(summary = "Get Score For Quiz")
     public ResponseEntity<Integer> getScore(@Valid @RequestBody List<AnswersRequest> answersRequests){
